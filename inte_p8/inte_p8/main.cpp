@@ -32,16 +32,17 @@ int main()
         //入力された数が正解より大きければ「もっと小さいですよ！」と表示
         if(inputNum < answer)
         {
-            cout << "もっと小さいですよ！" << endl;
+            printf("もっと小さいですよ！\n");
+            
         }
         // 入力された数が正解より小さければ「もっと大きいですよ！」と表示
         else if( inputNum > answer  )
         {
-            cout << "もっと大きいですよ！" << endl;
+            printf("もっと大きいですよ！\n");
+         
         }
     }
-    
-        cout << "正解です！" << endl;
+        printf("正解です！！\n");
     
     
     return 0;
