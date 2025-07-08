@@ -21,26 +21,34 @@ using namespace std;
 int main()
 {
 //正解の数は 7 とする（今回は固定）
-    int answer =7;
+    int answer = 7;
+    int inputNum = 0;
 //ユーザーに「いくつかな？」と問いかけ、整数の入力を受け付ける
     cout << "いくつかな？" << endl;
-    int inputNum;
-    cin >> inputNum ;
+ 
+    while( inputNum != answer)
+    {
+        cin >> inputNum ;
+        if(cin.fail() )
+        {
+            cin.clear();
+            cin.ignore(100,'\n');
+            continue;
+        }
+        
+        //入力された数が正解より大きければ「もっと小さいですよ！」と表示
+        if(inputNum < answer)
+        {
+            cout << "もっと小さいですよ！" << endl;
+        }
+        // 入力された数が正解より小さければ「もっと大きいですよ！」と表示
+        else if( inputNum > answer  )
+        {
+            cout << "もっと大きいですよ！" << endl;
+        }
+    }
     
-    if( inputNum > answer)
-    {
-//入力された数が正解より大きければ「もっと小さいですよ！」と表示
-        cout << "もっと小さいですよ！" << endl;
-    }
-// 入力された数が正解より小さければ「もっと大きいですよ！」と表示
-    else if(answer > inputNum )
-    {
-        cout << "もっと大きいですよ！" << endl;
-    }
-    else
-    {
         cout << "正解です！" << endl;
-    }
     
     
     return 0;
