@@ -24,18 +24,11 @@ int main()
     int answer = 7;
     int inputNum = 0;
 //ユーザーに「いくつかな？」と問いかけ、整数の入力を受け付ける
-    cout << "いくつかな？" << endl;
+    printf("いくつかな？\n");
  
     while( inputNum != answer)
     {
-        cin >> inputNum ;
-        if(cin.fail() )
-        {
-            cin.clear();
-            cin.ignore(100,'\n');
-            continue;
-        }
-        
+        scanf("%d" ,&inputNum);
         //入力された数が正解より大きければ「もっと小さいですよ！」と表示
         if(inputNum < answer)
         {
