@@ -32,13 +32,13 @@ int main()
         //入力された数が正解より大きければ「もっと小さいですよ！」と表示
         if(inputNum < answer)
         {
-            printf("もっと小さいですよ！\n");
+            printf("もっと大きいですよ！\n");
             
         }
         // 入力された数が正解より小さければ「もっと大きいですよ！」と表示
         else if( inputNum > answer  )
         {
-            printf("もっと大きいですよ！\n");
+            printf("もっと小さいですよ！！\n");
          
         }
     }
