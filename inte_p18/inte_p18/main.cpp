@@ -18,7 +18,7 @@ int main()
     {
         ++counter;
        
-        printf("This is %d attempt. you can input a number three times.input the number:\n",counter );
+        printf("This is %d attempt. \nyou can input a number three times.\ninput the number:\n",counter );
         scanf("%d", &input);
         printf("The number you input is %d \n", input );
         
