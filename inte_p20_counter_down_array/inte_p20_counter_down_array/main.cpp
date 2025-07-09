@@ -69,7 +69,7 @@ int main()
     for(int i = 0 ; i< MAX ;i++)
     {
         if(num[i] == -1)
-        {continue;}　//or break
+        {continue;}//or break
         printf("you input %d ,as %d th attempt\n", num[i], i+1);
         
     }
