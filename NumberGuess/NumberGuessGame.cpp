@@ -1,53 +1,96 @@
-//	中身（処理内容）を書く
 
+// class.cpp
 #include "NumberGuessGame.h"
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+//#include <algorithm>
 
-constexpr int MAX_ATTEMPTS = 3;
-constexpr int MIN = 1;
-constexpr int MAX = 9;
 
-void NumberGuessGame::run() 
-{
-    initialize();
-    play();
-    showRecords();
-}
-
-void NumberGuessGame::initialize() 
-{
-    std::srand(static_cast<unsigned int>(std::time(nullptr)));
-    randomNumber = MIN + std::rand() % (MAX - MIN + 1);
-    guesses.assign(MAX_ATTEMPTS, -1);
-}
-
-void NumberGuessGame::play() 
-{
-    int input;
-    for (int i = 0; i < MAX_ATTEMPTS; ++i) {
-        std::cout << "Guess a number: ";
-        std::cin >> input;
-        guesses[i] = input;
-
-        if (input == randomNumber) {
-            std::cout << "You win!\n";
-            return;
-        } else if (input < randomNumber) {
-            std::cout << "Too small!\n";
-        } else {
-            std::cout << "Too big!\n";
-        }
+    void NumberGuessGame::run()
+    {
+        generateRanNum();
+        getUserInputNum();
+        showResult();
+    
     }
-}
 
-void NumberGuessGame::showRecords() const 
-{
-    std::cout << "Your guesses:\n";
-    for (int i = 0; i < guesses.size(); ++i) {
-        if (guesses[i] != -1) {
-            std::cout << i + 1 << ": " << guesses[i] << "\n";
-        }
+    void NumberGuessGame::generateRanNum()
+    {
+        srand((unsigned int)time(NULL));
+        randomNum = 1 + rand()% 1000;
+        printf("Generate number \n");
+        printf("The created number is %d \n", randomNum);
+
     }
-}
+
+    void NumberGuessGame::getUserInputNum()
+    {
+        // std::fill(inputNum,)
+        attempts = 0;
+    
+        do
+        {
+            printf("you can input for another %d times\n", MAX - attempts);
+            printf("input a number");
+            scanf("%d",&inputNum[attempts] );
+            printf("you input %d",inputNum[attempts] );
+
+            if(inputNum[attempts] >randomNum)
+            {
+                printf("too big\n");
+            }
+            else if(randomNum > inputNum[attempts])
+            {
+                printf("too small\n");
+            }
+            else
+            {
+                //equal
+                printf("you correct\n");
+                isCorrect = true;
+                break;
+            }
+                //attempts++;
+                attempts++;
+
+        }
+        while( MAX - attempts > 0  && inputNum[attempts -1]!= randomNum);
+
+    }
+
+    void NumberGuessGame::showResult()
+    {
+        
+        if( !isCorrect)
+        {
+            printf("failed\n");
+            printf("the answer is %d\n", randomNum);
+
+            
+        }
+        else
+        {
+            printf("succeeded\n");
+            
+        }
+
+        printf("Result:\n");
+        printf("Times: Input and Difference:\n");
+
+        for(int i = 0; i < attempts; i++ )
+        {
+                int done = i + 1;
+                printf("%d : %d %+d\n", done, inputNum[i], abs(inputNum[i] - randomNum) );
+                
+        }
+
+        if(isCorrect)
+        {
+                printf("%d : %d %+d\n",attempts +1, inputNum[attempts], abs(inputNum[attempts] - randomNum) );
+        }
+
+    }
+

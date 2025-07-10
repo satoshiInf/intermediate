@@ -1,16 +1,22 @@
-//クラスや関数の"名前だけ"
 #pragma once
-#include <vector>
 
-class NumberGuessGame {
-public:
-    void run();  // 全体を動かす
+//class.h
 
-private:
-    void initialize();     // ゲーム準備
-    void play();           // ユーザーとのやりとり
-    void showRecords() const; // 履歴表示
+class NumberGuessGame
+{
+    public:
+    void run();
 
-    int randomNumber;         // 正解
-    std::vector<int> guesses; // 入力履歴
+    private:
+    void generateRanNum();
+    void getUserInputNum();
+    void showResult();
+
+    
+    int randomNum;
+    int attempts = 0;
+    static constexpr int MAX = 3;
+    int inputNum[MAX];
+    bool isCorrect = false;
+
 };
