@@ -51,6 +51,7 @@
                 //equal
                 printf("you correct\n");
                 isCorrect = true;
+                attempts++;
                 break;
             }
                 //attempts++;
@@ -85,11 +86,6 @@
                 int done = i + 1;
                 printf("%d : %d %+d\n", done, inputNum[i], abs(inputNum[i] - randomNum) );
                 
-        }
-
-        if(isCorrect)
-        {
-                printf("%d : %d %+d\n",attempts +1, inputNum[attempts], abs(inputNum[attempts] - randomNum) );
         }
 
     }
