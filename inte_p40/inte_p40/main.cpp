@@ -19,18 +19,17 @@ int sleep(int timeSeconds)
 
 int main()
 {
-    std::cout<< "Hello" << std::endl;
+    //string.lenth should be managed to ensure that string1.lengh > string2.length
+    std::cout<< "Hello   " << "\r" ;
     fflush(stdout);
     sleep(1);
     
-    std::cout<< "How are you" << std:: endl;
+    std::cout<< "Loading " << "\r";
     fflush(stdout);
     sleep(1);
     
-    std::cout<< "Done" << std:: endl;
+    std::cout<< "Done    "  << std::endl;
     fflush(stdout);
-    
-    
     
     return 0;
 }
