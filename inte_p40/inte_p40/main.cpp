@@ -28,7 +28,16 @@ int main()
     fflush(stdout);
     sleep(1);
     
-    std::cout<< "Done    "  << std::endl;
+    std::cout<< "Done     \t"<< std::endl;
+    
+    printf("\n");
+    
+    //horizontal
+    printf("\t Done ");
+    //vertical
+    printf("\v Done ");
+    printf("\t Done ");
+    
     fflush(stdout);
     
     return 0;
