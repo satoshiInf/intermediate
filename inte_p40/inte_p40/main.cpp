@@ -10,10 +10,9 @@
 #include <chrono>
 #include <thread>
 
-int sleep(int timeSeconds)
+void sleep(int timeSeconds)
 {
     std::this_thread::sleep_for(std::chrono::seconds(timeSeconds));
-    return timeSeconds;
 }
 
 
