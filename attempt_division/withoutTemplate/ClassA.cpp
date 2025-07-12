@@ -1,21 +1,20 @@
-#include "A.h"
-
+#include "ClassA.h"
 
     
-    void A::run()
+    void ClassA::run()
     {
         func1();
         func2();
         
     }
     
-    void A::func1()
+    void ClassA::func1()
     {
         
     }
     
-    void A::func2()
+    void ClassA::func2()
     {
         
     }
-    
+
