@@ -75,7 +75,7 @@ int main()
 {
     srand((unsigned int)time(NULL) );
     int input;
-    int ranNum = rand();
+    int ranNum =0;
     
     //使う変数はdowhileで定義しておき、＝０で初期化しておく
     int modInput=0;
@@ -86,7 +86,7 @@ int main()
 
     do
     {
-       
+        
     
         //user
         printf("Input number\n");
@@ -106,7 +106,7 @@ int main()
                 break;
         }
         
-        
+        ranNum = rand();
         printf("\n computer chooses:\n");
         modRandomNum = ((ranNum % 3 )+ 3) % 3;
         
